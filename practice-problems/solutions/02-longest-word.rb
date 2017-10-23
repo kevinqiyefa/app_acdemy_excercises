@@ -7,24 +7,11 @@
 # Difficulty: easy.
 
 def longest_word(sentence)
-  words = sentence.split(" ")
-
-  longest_word = nil
-
-  word_idx = 0
-  while word_idx < words.length
-    current_word = words[word_idx]
-
-    if longest_word == nil
-      longest_word = current_word
-    elsif longest_word.length < current_word.length
-      longest_word = current_word
-    end
-
-    word_idx += 1
-  end
-
-  return longest_word
+  sentence.split.sort_by{|x| x.length}.last
+  
+  # or using max()
+  #sentence.split.max {|a, b| a.length <=> b.length}
+  
 end
 
 # These are tests to check that your code is working. After writing
