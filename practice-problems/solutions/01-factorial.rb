@@ -6,18 +6,18 @@
 # Difficulty: easy.
 
 def factorial(n)
-  if n < 0
-    return nil
+  #this is the shortest code
+  (1..n).inject(:*) || 1
+  
+  #Or using recursion
+=begin
+  if n <=1
+    return 1
+  else
+    n*factorial(n-1)
   end
-
-  result = 1
-  while n > 0
-    result = result * n
-
-    n -= 1
-  end
-
-  return result
+=end
+    
 end
 
 # These are tests to check that your code is working. After writing
