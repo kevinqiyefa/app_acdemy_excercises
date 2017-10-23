@@ -5,26 +5,28 @@
 # Difficulty: medium.
 
 def nearby_az(string)
-  idx1 = 0
-  while idx1 < string.length
-    if string[idx1] != "a"
-      idx1 += 1
-      next
-    end
-
-    idx2 = idx1 + 1
-    while (idx2 < string.length) && (idx2 <= idx1 + 3)
-      if string[idx2] == "z"
+  if string.index('z') && string.index('a')
+    (string.index('z') - string.index('a')) <= 3 && (string.index('z') - string.index('a')) > 0
+  else
+    return false
+  end
+  
+  
+  # Here's another solution
+=begin  
+  if string.index('a')
+    x = string.index('a')
+    while x < string.length
+      if string[x+1] == "z"
         return true
       end
-
-      idx2 += 1
+      x+=1
     end
-
-    idx1 += 1
   end
-
+  
   return false
+=end  
+  
 end
 
 # These are tests to check that your code is working. After writing

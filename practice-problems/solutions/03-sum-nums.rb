@@ -4,15 +4,7 @@
 # Difficulty: easy.
 
 def sum_nums(num)
-  result = 0
-
-  i = 0
-  while i <= num
-    result += i
-    i += 1
-  end
-
-  return result
+  (0..num).inject(:+)
 end
 
 # These are tests to check that your code is working. After writing

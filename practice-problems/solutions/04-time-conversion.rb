@@ -4,20 +4,15 @@
 # Difficulty: easy.
 
 def time_conversion(minutes)
-  hours = 0
-
-  while minutes >= 60
-    hours += 1
-    minutes -= 60
-  end
-
-  if minutes < 10
-    minutes_s = "0" + minutes.to_s
+    t = 0
+  if minutes%60 < 10 
+      t = "0#{minutes%60}"
   else
-    minutes_s = minutes.to_s
+    t = minutes%60
   end
-
-  return hours.to_s + ":" + minutes_s
+ "#{minutes/60.floor}:#{t}" 
+  
+  
 end
 
 # These are tests to check that your code is working. After writing

@@ -5,21 +5,12 @@
 # Difficulty: medium.
 
 def two_sum(nums)
-  idx1 = 0
-  while idx1 < nums.length
-    idx2 = idx1 + 1
-    while idx2 < nums.length
-      if nums[idx1] + nums[idx2] == 0
-        return [idx1, idx2]
-      end
-
-      idx2 += 1
+    t = nums.select{|x| nums.include?(-x)}
+    if t.length != 2 
+        nil
+    else 
+        [nums.index(t[0]), nums.index(t[1])]
     end
-
-    idx1 += 1
-  end
-
-  return nil
 end
 
 # These are tests to check that your code is working. After writing
