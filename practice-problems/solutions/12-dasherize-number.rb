@@ -8,26 +8,32 @@
 # Difficulty: medium.
 
 def dasherize_number(num)
-  num_s = num.to_s
-
-  result = ""
-
-  idx = 0
-  while idx < num_s.length
-    digit = num_s[idx].to_i
-
-    if (idx > 0)
-      prev_digit = num_s[idx - 1].to_i
-      if (prev_digit % 2 == 1) || (digit % 2 == 1)
-        result += "-"
-      end
-    end
-    result += num_s[idx]
-
-    idx += 1
+  t = num.to_s.split('')
+  s = ""
+  i = 0
+  
+  while i < t.length
+    if t[i].to_i.even?
+      s += t[i].to_s
+    else
+      if i == 0
+        s += t[i].to_s
+        s += "-"
+      else
+        if s.split('').last != '-'
+          s += "-"
+        end
+        s += t[i].to_s
+        if i != t.length-1
+          s += "-"
+        end  
+        
+      end  
+        
+    end  
+    i += 1
   end
-
-  return result
+  s
 end
 
 # These are tests to check that your code is working. After writing

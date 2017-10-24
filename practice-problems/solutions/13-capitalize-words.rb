@@ -10,17 +10,10 @@
 
 def capitalize_words(string)
   words = string.split(" ")
+  s = []
+  words.each{|x|  s << x.capitalize}
+  s.join(" ")
 
-  idx = 0
-  while idx < words.length
-    word = words[idx]
-
-    word[0] = word[0].upcase
-
-    idx += 1
-  end
-
-  return words.join(" ")
 end
 
 # These are tests to check that your code is working. After writing

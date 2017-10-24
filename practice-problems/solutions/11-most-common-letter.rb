@@ -5,31 +5,8 @@
 # Difficulty: medium.
 
 def most_common_letter(string)
-  most_common_letter = nil
-  most_common_letter_count = nil
-
-  idx1 = 0
-  while idx1 < string.length
-    letter = string[idx1]
-    count = 0
-
-    idx2 = 0
-    while idx2 < string.length
-      if string[idx2] == letter
-        count += 1
-      end
-      idx2 += 1
-    end
-
-    if (most_common_letter_count == nil) || (count > most_common_letter_count)
-      most_common_letter = letter
-      most_common_letter_count = count
-    end
-
-    idx1 += 1
-  end
-
-  return [most_common_letter, most_common_letter_count]
+  t = string.split('').max_by{|x| string.count(x)}
+  [t.to_s, string.count(t)]
 end
 
 # These are tests to check that your code is working. After writing

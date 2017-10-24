@@ -8,6 +8,11 @@
 # Difficulty: medium.
 
 def is_power_of_two?(num)
+  
+  #convert num to binary then count the '1'
+  num.to_s(2).count('1') == 1
+
+=begin  
   if num < 1
     return false
   end
@@ -21,6 +26,8 @@ def is_power_of_two?(num)
       return false
     end
   end
+=end
+
 end
 
 # These are tests to check that your code is working. After writing

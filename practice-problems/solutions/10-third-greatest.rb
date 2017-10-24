@@ -5,6 +5,11 @@
 # Difficulty: medium.
 
 def third_greatest(nums)
+  
+  nums.sort.reverse[2]
+  
+  
+=begin 
   first = nil
   second = nil
   third = nil
@@ -27,6 +32,7 @@ def third_greatest(nums)
   end
 
   return third
+=end
 end
 
 # These are tests to check that your code is working. After writing
