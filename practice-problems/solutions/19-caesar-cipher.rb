@@ -24,6 +24,20 @@
 # information, we would not give it to you on the timed challenge. :-)
 
 def caesar_cipher(offset, string)
+  
+  s = string.split(" ").map{|a|
+    a.split("").map {|x| 
+    if x.ord+offset > 122
+      (x.ord+offset-26).chr
+    else
+      (x.ord+offset).chr
+    end  
+    }.join("")
+  }.join(" ")
+  s
+
+  # Here's another solution without using built-in method
+=begin  
   words = string.split(" ")
 
   word_idx = 0
@@ -44,6 +58,8 @@ def caesar_cipher(offset, string)
   end
 
   return words.join(" ")
+  
+=end
 end
 
 # These are tests to check that your code is working. After writing

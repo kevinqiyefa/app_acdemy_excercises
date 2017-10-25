@@ -5,37 +5,31 @@
 
 # You may use our `is_prime?` solution.
 def is_prime?(number)
+  
   if number <= 1
-    # only numbers > 1 can be prime.
-    return false
-  end
-
-  idx = 2
-  while idx < number
-    if (number % idx) == 0
-      return false
+    return false 
+  else
+    i= 2
+    while number > i
+      return false if number % i == 0
+      i += 1
     end
-
-    idx += 1
+    return true
   end
-
-  return true
 end
 
+
 def nth_prime(n)
-  prime_num = 0
-
-  i = 2
-  while true
-    if is_prime?(i)
-      prime_num += 1
-      if prime_num == n
-        return i
+    x = 2
+    a = 0
+    while true
+      #check if it is prime or not.
+      if is_prime?(x)
+        a += 1
       end
+      return x if a == n 
+      x +=1
     end
-
-    i += 1
-  end
 end
 
 # These are tests to check that your code is working. After writing

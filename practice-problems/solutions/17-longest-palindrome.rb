@@ -30,25 +30,22 @@ def palindrome?(string)
 end
 
 def longest_palindrome(string)
-  best_palindrome = nil
-
-  idx1 = 0
-  while idx1 < string.length
-    length = 1
-    while (idx1 + length) <= string.length
-      substring = string.slice(idx1, length)
-
-      if palindrome?(substring) && (best_palindrome == nil || substring.length > best_palindrome.length)
-        best_palindrome = substring
-      end
-
-      length += 1
+  a = []
+  i = 0
+  while i < string.length
+    j = 2
+    while j <= string.length
+      break if i + j > string.length
+      if palindrome?(string.slice(i, j))
+        a << string.slice(i, j)
+      end  
+      j += 1
     end
-
-    idx1 += 1
+  i += 1
   end
 
-  return best_palindrome
+  a.max_by{|x| x.length}
+
 end
 
 # These are tests to check that your code is working. After writing

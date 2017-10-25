@@ -5,6 +5,12 @@
 # Difficulty: medium.
 
 def greatest_common_factor(number1, number2)
+  #solution with recursion
+  return number1 if number2 == 0 
+  greatest_common_factor(number2, number1 % number2)
+  
+  # here's another solution
+=begin  
   # start i at smaller of number1, number2
   i = nil
   if number1 <= number2
@@ -20,6 +26,7 @@ def greatest_common_factor(number1, number2)
 
     i -= 1
   end
+=end
 end
 
 # These are tests to check that your code is working. After writing

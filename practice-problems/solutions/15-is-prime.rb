@@ -13,21 +13,18 @@
 # Difficulty: medium.
 
 def is_prime?(number)
+  
   if number <= 1
-    # only numbers > 1 can be prime.
-    return false
-  end
-
-  idx = 2
-  while idx < number
-    if (number % idx) == 0
-      return false
+    return false 
+  else
+    i= 2
+    while number > i
+      return false if number % i == 0
+      i += 1
     end
-
-    idx += 1
+    return true
   end
 
-  return true
 end
 
 # These are tests to check that your code is working. After writing
