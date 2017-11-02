@@ -6,8 +6,10 @@
 
 def two_sum(array, target)
   # your code here
-  array.each{|x| return true if array.any?{|y| x+y ==target && array.index(x) != array.index(y)}}
-  return false
+  #array.each{|x| return true if array.any?{|y| x+y ==target && array.index(x) != array.index(y)}}
+  #return false
+  array.combination(2).any?{|x| x.inject(:+) == target}
+  
 end
 
 puts "------Two Sum------"
