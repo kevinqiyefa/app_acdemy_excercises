@@ -6,7 +6,8 @@
 
 def longest_segment(input, delimeter)
   s = input.split(delimeter)
-  s.sort_by{|x| x.size}.last
+  #s.sort_by{|x| x.size}.last
+  s.max{|x,y| x.length <=> y.length}
 end
 
 puts "---------Longest Segment----------"

@@ -8,6 +8,16 @@
 # Difficulty: medium.
 
 def dasherize_number(num)
+    s = num.to_s.split("").join("-").split("")
+
+    s.each{|x| 
+      if x != "-" and x.to_i.even? and s[s.index(x) +2].to_i.even?
+        s.delete_at(s.index(x)+1) if s[s.index(x)+1] == "-"
+      end
+    }
+    s.join
+  
+=begin  
   t = num.to_s.split('')
   s = ""
   i = 0
@@ -34,6 +44,7 @@ def dasherize_number(num)
     i += 1
   end
   s
+=end
 end
 
 # These are tests to check that your code is working. After writing
