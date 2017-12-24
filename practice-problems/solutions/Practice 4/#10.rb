@@ -55,53 +55,21 @@ def even_splitters(string)
   # your code goes here
   #
 
-  t = string.split("")
-  h = {}
-  t.each{|x|
-     h[x] = string.split(x)
-  }
+  splitters = string.split("").uniq
   
-  arr = {}
-  h.each{|k, v| 
-
-    if v.size > 1
-      if check_element_length(v)
-          arr[k] = v
-      end
-    else
-
-      arr[k] = v
-    end
-    
+  splitters.select{|s|
+    check_element_length(string.split(s))
   }
-  
-  arr.keys
   
 end
 
 
 def check_element_length(arr)
-
-  check = true
+  t = arr.reject{|x| x == ""}
+  t.all?{|y| y.length==t[0].length}
  
-  t = arr.select{|x| x.size != 0 }
-  
-  return false if t.size == 0
-  
-  arr.each{|x|
-
-    if x.length == t[0].length || x.length == 0
-      check = true
-
-    else
-  
-      check = false
-      break
-    end
-  }
-  
-  check
 end
+
 
 puts "-----Even Splitters----"
 puts even_splitters("") == []
