@@ -4,6 +4,10 @@
 # any vowels in it with an "X". Do not modify the original string.
 
 def vowel_censor(string)
+  
+  string.gsub(/[aeiou]/, "X")
+ 
+=begin  
   v = ["a", "e", "i", "o", "u" ]
   s = ""
   string.split(" ").each{|x|
@@ -14,7 +18,7 @@ def vowel_censor(string)
     s += " " 
   }
   s.split(" ").join(" ")
- 
+=end 
 end
 
 puts "---------Vowel Censor----------"
